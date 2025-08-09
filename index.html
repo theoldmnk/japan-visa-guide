@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Visa Guide - India to Japan Tourist Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Main Card */
+        .product-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header Section */
+        .product-header {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .flag-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        .price-badge {
+            background: #4ecdc4;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Content Section */
+        .product-content {
+            padding: 50px 40px;
+        }
+
+        .what-you-get {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #2d3748;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #e53e3e;
+        }
+
+        .quote-mark {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 3rem;
+            color: rgba(229, 62, 62, 0.2);
+            font-family: serif;
+        }
+
+        /* Purchase Button */
+        .purchase-section {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .purchase-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .purchase-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        .guarantee {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .guarantee-icon {
+            color: #4ecdc4;
+            margin-right: 5px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .product-header {
+                padding: 40px 25px;
+            }
+            
+            .product-title {
+                font-size: 2.2rem;
+            }
+            
+            .product-content {
+                padding: 35px 25px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Price Badge */
+        .price-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #4ecdc4;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+            z-index: 3;
+        }
+
+        /* Limited Time Badge */
+        .limited-badge {
+            background: #e53e3e;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Bottom CTA Section */
+        .bottom-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 40px;
+            text-align: center;
+            margin: 40px -40px -50px -40px;
+        }
+
+        .bottom-cta-title {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .bottom-cta-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-card">
+            <div class="price-tag">₹399</div>
+            
+            <!-- Header -->
+            <div class="product-header">
+                <div class="limited-badge">Limited Time Offer</div>
+                <span class="flag-emoji">🇮🇳 ✈️ 🇯🇵</span>
+                <h1 class="product-title">Japan Visa Guide</h1>
+                <p class="product-subtitle">Complete India to Japan Tourist Visa Guide</p>
+                <button class="purchase-btn" onclick="scrollToPurchase()" style="margin-top: 20px;">
+                    Get Guide
+                </button>
+            </div>
+            
+            <!-- Content -->
+            <div class="product-content">
+                <div class="what-you-get">
+                    <h2 class="section-title">🎯 What You'll Get</h2>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <span class="feature-icon">📋</span>
+                            <h3 class="feature-title">30+ Detailed Steps</h3>
+                            <p class="feature-desc">Every single step from application to approval</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <span class="feature-icon">📄</span>
+                            <h3 class="feature-title">Document Checklist</h3>
+                            <p class="feature-desc">Never miss a document again</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <span class="feature-icon">💰</span>
+                            <h3 class="feature-title">Cost Breakdown</h3>
+                            <p class="feature-desc">Exact fees and hidden costs revealed</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <span class="feature-icon">⏰</span>
+                            <h3 class="feature-title">Timeline Guide</h3>
+                            <p class="feature-desc">When to apply and processing times</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <span class="feature-icon">❌</span>
+                            <h3 class="feature-title">Common Mistakes</h3>
+                            <p class="feature-desc">Avoid rejection with insider tips</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <h3 class="feature-title">Cover Letter Templates</h3>
+                            <p class="feature-desc">Proven application formats</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial -->
+                <div class="testimonial">
+                    <span class="quote-mark">"</span>
+                    <p class="testimonial-text">
+                        "Got my visa approved in just 7 days! This guide saved me from so much confusion and stress. Worth every penny!"
+                    </p>
+                    <p class="testimonial-author">- Preesha Anand</p>
+                </div>
+                
+                <!-- Purchase Section -->
+                <div class="purchase-section" id="purchase-section">
+                    <button class="purchase-btn" onclick="openCheckout()">
+                        Download Now - ₹399
+                    </button>
+                    
+                    <div class="guarantee">
+                        <span class="guarantee-icon">🔒</span>
+                        30-day money-back guarantee • Instant download
+                    </div>
+                </div>
+
+                <!-- Bottom CTA Section -->
+                <div class="bottom-cta">
+                    <h3 class="bottom-cta-title">Don't Miss Out!</h3>
+                    <p class="bottom-cta-subtitle">Join thousands of Indians who got their Japan visa approved</p>
+                    <button class="purchase-btn" onclick="openCheckout()">
+                        Get Your Guide Now - ₹399
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openCheckout() {
+            // Open the DodoPayments checkout link
+            window.open('https://checkout.dodopayments.com/buy/pdt_n44UDUS6T7qhUgBrpmRhJ?quantity=1', '_blank');
+        }
+
+        function scrollToPurchase() {
+            // Smooth scroll to purchase section
+            document.getElementById('purchase-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    </script>
+</body>
+</html>
