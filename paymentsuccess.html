@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Japan Visa Guide</title>
+    <meta name="description" content="Thank you for purchasing the Japan Visa Guide! Check your email for download instructions.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://japan-visa-guide.vercel.app/paymentsuccess">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇯🇵</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .success-container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .success-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .checkmark {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            animation: scaleIn 0.6s ease-out;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .checkmark::after {
+            content: '✓';
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .success-subtitle {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .next-steps {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+        }
+
+        .next-steps h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #2d3748;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            background: #e53e3e;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        .celebration-emoji {
+            font-size: 2rem;
+            margin: 0 5px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .success-card {
+                padding: 40px 25px;
+            }
+            
+            .success-title {
+                font-size: 2rem;
+            }
+            
+            .next-steps, .contact-info {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-card">
+            <div class="checkmark"></div>
+            
+            <h1 class="success-title">
+                Payment Successful!
+                <span class="celebration-emoji">🎉</span>
+            </h1>
+            
+            <p class="success-subtitle">
+                Thank you for purchasing the Japan Visa Guide! Your journey to Japan starts now.
+            </p>
+
+            <div class="next-steps">
+                <h3>📥 What Happens Next?</h3>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <strong>Check Your Email:</strong> You'll receive a download link within 5 minutes to the email address you provided during checkout.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <strong>Download Your Guide:</strong> Click the link in your email to instantly download your complete Japan Visa Guide (PDF format).
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <strong>Start Your Application:</strong> Follow the 30+ detailed steps in your guide to apply for your Japan tourist visa with confidence.
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3>🤝 Need Help?</h3>
+                <p><strong>Support Email:</strong> <a href="mailto:support@japanvisaguide.com">support@japanvisaguide.com</a></p>
+                <p><strong>Response Time:</strong> Within 24 hours</p>
+                <p>We're here to help you succeed with your Japan visa application!</p>
+            </div>
+
+            <a href="/" class="back-home">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Show a welcome message after a short delay
+        setTimeout(() => {
+            console.log('🎌 Welcome to your Japan adventure! Check your email for the download link.');
+        }, 1000);
+
+        // Optional: Track successful purchase for analytics
+        // gtag('event', 'purchase', { /* your tracking data */ });
+    </script>
+</body>
+</html>
