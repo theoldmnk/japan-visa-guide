@@ -286,6 +286,77 @@
             100% { transform: scale(1); }
         }
 
+        /* Floating Coupon */
+        .floating-coupon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            padding: 15px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            animation: slideIn 0.5s ease-out;
+            max-width: 250px;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .coupon-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        .coupon-close:hover {
+            opacity: 1;
+        }
+
+        .coupon-text {
+            font-size: 0.9rem;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .coupon-code {
+            background: white;
+            color: #e53e3e;
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            display: inline-block;
+            margin: 8px 0;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .coupon-remaining {
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
         /* Bottom CTA Section */
         .bottom-cta {
             background: linear-gradient(135deg, #667eea, #764ba2);
@@ -309,6 +380,15 @@
     </style>
 </head>
 <body>
+    <!-- Floating Coupon -->
+    <div class="floating-coupon" id="coupon-popup">
+        <button class="coupon-close" onclick="closeCoupon()">×</button>
+        <p class="coupon-text">🎁 LIMITED TIME OFFER</p>
+        <div class="coupon-code">FIRST10</div>
+        <p class="coupon-text" style="margin-bottom: 5px;">100% OFF - FREE!</p>
+        <div class="coupon-remaining">⚡ Only <span id="coupon-count">5</span> left!</div>
+    </div>
+
     <div class="container">
         <div class="product-card">
             <div class="price-tag">₹399</div>
@@ -377,6 +457,7 @@
                     <p class="testimonial-author">- Preesha Anand</p>
                 </div>
                 
+
                 <!-- Purchase Section -->
                 <div class="purchase-section" id="purchase-section">
                     <button class="purchase-btn" onclick="openCheckout()">
@@ -413,6 +494,36 @@
                 behavior: 'smooth',
                 block: 'center'
             });
+        }
+
+        // Coupon popup functions
+        function closeCoupon() {
+            document.getElementById('coupon-popup').style.display = 'none';
+        }
+
+        // Countdown for coupon availability
+        let couponCount = 5;
+        setInterval(() => {
+            const random = Math.random();
+            // 10% chance to decrease count every 30 seconds
+            if (random < 0.1 && couponCount > 1) {
+                couponCount--;
+                document.getElementById('coupon-count').textContent = couponCount;
+            }
+        }, 30000);
+
+        // Show coupon popup after 3 seconds
+        setTimeout(() => {
+            const popup = document.getElementById('coupon-popup');
+            if (popup && !sessionStorage.getItem('couponClosed')) {
+                popup.style.display = 'block';
+            }
+        }, 3000);
+
+        // Remember if user closed the coupon
+        function closeCoupon() {
+            document.getElementById('coupon-popup').style.display = 'none';
+            sessionStorage.setItem('couponClosed', 'true');
         }
     </script>
 
