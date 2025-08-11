@@ -380,18 +380,13 @@
     </style>
 </head>
 <body>
-    <!-- Floating Coupon -->
-    <div class="floating-coupon" id="coupon-popup">
-        <button class="coupon-close" onclick="closeCoupon()">×</button>
-        <p class="coupon-text">🎁 LIMITED TIME OFFER</p>
-        <div class="coupon-code">FIRST10</div>
-        <p class="coupon-text" style="margin-bottom: 5px;">100% OFF - FREE!</p>
-        <div class="coupon-remaining">⚡ Only <span id="coupon-count">5</span> left!</div>
-    </div>
 
     <div class="container">
         <div class="product-card">
-            <div class="price-tag">₹399</div>
+            <div class="price-tag">
+                <span style="text-decoration: line-through; opacity: 0.6; font-size: 1.2rem;">₹399</span>
+                <span style="display: block; margin-top: -5px;">₹0</span>
+            </div>
             
             <!-- Header -->
             <div class="product-header">
@@ -400,7 +395,7 @@
                 <h1 class="product-title">Japan Visa Guide</h1>
                 <p class="product-subtitle">Complete India to Japan Tourist Visa Guide</p>
                 <button class="purchase-btn" onclick="scrollToPurchase()" style="margin-top: 20px;">
-                    Get Guide
+                    Get Free Guide
                 </button>
             </div>
             
@@ -461,7 +456,7 @@
                 <!-- Purchase Section -->
                 <div class="purchase-section" id="purchase-section">
                     <button class="purchase-btn" onclick="openCheckout()">
-                        Download Now - ₹399
+                        Download Free Guide
                     </button>
                     
                     <div class="guarantee">
@@ -475,7 +470,7 @@
                     <h3 class="bottom-cta-title">Don't Miss Out!</h3>
                     <p class="bottom-cta-subtitle">Join thousands of Indians who got their Japan visa approved</p>
                     <button class="purchase-btn" onclick="openCheckout()">
-                        Get Your Guide Now - ₹399
+                        Get Your Free Guide Now
                     </button>
                 </div>
             </div>
@@ -496,35 +491,6 @@
             });
         }
 
-        // Coupon popup functions
-        function closeCoupon() {
-            document.getElementById('coupon-popup').style.display = 'none';
-        }
-
-        // Countdown for coupon availability
-        let couponCount = 5;
-        setInterval(() => {
-            const random = Math.random();
-            // 10% chance to decrease count every 30 seconds
-            if (random < 0.1 && couponCount > 1) {
-                couponCount--;
-                document.getElementById('coupon-count').textContent = couponCount;
-            }
-        }, 30000);
-
-        // Show coupon popup after 3 seconds
-        setTimeout(() => {
-            const popup = document.getElementById('coupon-popup');
-            if (popup && !sessionStorage.getItem('couponClosed')) {
-                popup.style.display = 'block';
-            }
-        }, 3000);
-
-        // Remember if user closed the coupon
-        function closeCoupon() {
-            document.getElementById('coupon-popup').style.display = 'none';
-            sessionStorage.setItem('couponClosed', 'true');
-        }
     </script>
 
     <!-- JSON-LD Structured Data -->
@@ -540,7 +506,7 @@
         },
         "offers": {
             "@type": "Offer",
-            "price": "399",
+            "price": "0",
             "priceCurrency": "INR",
             "availability": "https://schema.org/InStock",
             "url": "https://checkout.dodopayments.com/buy/pdt_n44UDUS6T7qhUgBrpmRhJ?quantity=1&redirect_url=https://japanvisa.live%2Fpaymentsuccess"
